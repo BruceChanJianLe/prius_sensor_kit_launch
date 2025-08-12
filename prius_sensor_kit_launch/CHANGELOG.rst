@@ -1,51 +1,46 @@
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Changelog for package common_sensor_launch
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Changelog for package prius_sensor_kit_launch
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 0.42.0 (2025-03-28)
 -------------------
+* refactor(prius_sensor_kit_launch): remove reference to tamagawa_imu_driver (`#122 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/122>`_)
+* Contributors: Esteve Fernandez, M. Fatih Cırıt
 
 0.41.0 (2025-02-12)
 -------------------
-* fix: add `udp_only` (`#109 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/109>`_)
-  Added udp_only
-* feat(common_sensor_launch): rename velodyne_monitor to autoware_velodyne_monitor (`#119 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/119>`_)
-* Contributors: Ryohsuke Mitsudome, SakodaShintaro
+* feat(prius_sensor_kit_launch): concatenate node load from parameter file (`#108 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/108>`_)
+  * feat: concatenate node load from parameter file
+  * chore: update params
+  * chore: add use_naive_approach
+  * chore: remove space
+  * feat: add matching strategy params
+  ---------
+* Contributors: Yi-Hsiang Fang (Vivid)
 
 0.40.0 (2025-01-17)
 -------------------
 * Merge branch 'main' into release-0.40.0
-* fix(nebula_node_container.launch.py): autoware_glog_component (`#112 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/112>`_)
-  Fixed autoware_glog_component
-* refactor(glog_component): prefix package and namespace with autoware (`#110 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/110>`_)
-* Contributors: Esteve Fernandez, Ryohsuke Mitsudome, SakodaShintaro
+* fix(prius_sensor_kit_launch): add autoware prefix to vehicle_velocity_converter (`#107 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/107>`_)
+  * add autoware to vehicle_velocity_converter
+  * add dependency autoware_vehicle_velocity_converter
+  ---------
+  Co-authored-by: Yamato Ando <yamato.ando@gmail.com>
+* Contributors: Masaki Baba, Ryohsuke Mitsudome
 
 0.39.0 (2024-12-09)
 -------------------
-* chore(common_sensor_launch): add distortion corrector parameter (`#105 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/105>`_)
-  chore: add parameter
-* chore(nebula_node_container): make launchers work with Nebula v0.2.0 (`#106 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/106>`_)
-* feat(common_sensor_launch): ring outlier filter load from param file (`#103 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/103>`_)
-  * feat: ring outlier filter load from param file
-  * fix: fix variable name
-  * chore: fix description
+* chore(gnss_launch): added autoware\_ prefix to gnss_poser (`#100 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/100>`_)
+  * Added autoware\_ prefix to gnss_poser
+  * style(pre-commit): autofix
   ---------
-* feat: add robosense Bpearl and Helios Lidar launch files for users (`#102 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/102>`_)
+  Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+* chore: changed the package name from imu_corrector to autoware_imu_corrector (`#99 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/99>`_)
 * refactor!: pointcloud_preprocessor prefix package and namespace with autoware (`#95 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/95>`_)
   * refactor!: pointcloud_preprocessor prefix package and namespace with autoware
   * style(pre-commit): autofix
   ---------
   Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
-* chore: remapped topics for the point type migration (`#94 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/94>`_)
-  chore: remapped topics to match the temporary fix for the sensing point migration
-* feat(pointcloud_preprocessor): load_distortion_parameter_from_yaml (`#93 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/93>`_)
-  * feat: load distortion parameter from yaml
-  * chore: fix spell error
-  * feat: modify the nebula_node_container based on tier4 internal common_sensor_launch
-  * chore: use ParameterFile to load param
-  ---------
-* fix(nebula node container): fix if condition for ring outlier filter (`#92 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/92>`_)
-  fix nebula node container
 * feat(common_sensor_launch, pointcloud_preprocessor): change pointcloud interface to synchronized pointclouds (`#91 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/91>`_)
   * feat: edn
   * fix: suppress spell-check
@@ -53,13 +48,12 @@ Changelog for package common_sensor_launch
   * feat: interface change in sensing lidar pointcloud. use synchronized pointcloud as sensor interface
   ---------
   Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
-* feat: change pointcloud preprocess output from base_link to sensor_frame (`#90 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/90>`_)
-  * feat: edn
-  * fix: suppress spell-check
-  * style(pre-commit): autofix
+* feat: remove use_pointcloud_container (`#87 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/87>`_)
+  * feat!: remove use_pointcloud_container
+  * fix: remove unnecessary import
   ---------
-  Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
-* chore(nebula_node_container): enhance logging (`#86 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/86>`_)
+* fix(gnss_launch): remove gnss_frame arg (`#88 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/88>`_)
+  remove gnss_frame arg
 * feat: always separate lidar preprocessing from pointcloud_container (`#85 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/85>`_)
   * feat!: replace use_pointcloud_container
   * style(pre-commit): autofix
@@ -73,27 +67,72 @@ Changelog for package common_sensor_launch
 * refactor: rename lidar topic (`#82 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/82>`_)
   rename lidar topic
   Co-authored-by: yamato-ando <Yamato ANDO>
-* fix(nebula launch): remove loading of parameters from default config file (`#74 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/74>`_)
-  * fix(nebula launch): remove loading of parameters from default configuration file
-  * chore(nebula launch): remove orphaned directory variable
-  * chore(nebula launch): remove unused import
+* feat(imu_launch): fixed gyro_bias_estimator input (`#79 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/79>`_)
+  Fixed gyro_bias_estimator input
+* feat(imu_launch): fixed gyro_bias_estimator input (`#78 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/78>`_)
+  Fixed gyro_bias_estimator input
+* fix(pointcloud_preprocessor): organize input twist topic (`#77 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/77>`_)
+  * fix(pointcloud_preprocessor): organize input twist topic
+  * fix
   ---------
+* feat(gnss_poser): subscribe map projector info (`#73 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/73>`_)
+  feat(gnss_poser): subscribe map_projector_info
 * refactor(nebula launch): consistent naming for sensor_ip parameter (`#72 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/72>`_)
-* fix(nebula launch): rotation_speed type (`#71 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/71>`_)
-  fix rotation_speed type
-* fix(common_sensor_launch): add nebula to package.xml (`#65 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/65>`_)
+* feat(imu_corrector): add gyro_bias_estimator (`#70 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/70>`_)
+  * fix(prius_sensor_kit_launch): fix how to call vehicle_id
+  * feat(imu_corrector): add gyro_bias_validator
+  * style(pre-commit): autofix
+  ---------
+  Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+* fix(prius_sensor_kit_launch): fix how to call vehicle_id (`#69 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/69>`_)
+  * fix(prius_sensor_kit_launch): fix how to call vehicle_id
+  * style(pre-commit): autofix
+  ---------
+  Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+* fix(prius_sensor_kit_launch): remote plane support for gnss_poser (`#68 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/68>`_)
+  fix comment
+* feat(gnss_poser): remove utm projection in gnss_poser (`#67 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/67>`_)
 * feat: change from velodyne_vls to nebula driver (`#64 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/64>`_)
   * feat: change from velodyne_vls to nebula driver
   * style(pre-commit): autofix
   ---------
   Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
 * chore: update maintainer (`#60 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/60>`_)
+* feat(prius_sensor_kit_launch): add input topic remapping (`#59 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/59>`_)
+  add input topic remappinbg
+* feat(prius_sensor_kit_launch): add max_sensor range in left/right lidar (`#57 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/57>`_)
+  * add max_sensor range in left/right lidar
+  * style(pre-commit): autofix
+  ---------
+  Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+* feat(prius_sensor_kit_launch): add param file for dummy_diag_publisher (`#55 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/55>`_)
+  * add param file for dummy_diag_publisher
+  * fixed dummy_diag_publisher sensor_kit param yaml (add empty diag)
+  ---------
+* ci(pre-commit): autoupdate (`#52 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/52>`_)
+  * ci(pre-commit): autoupdate
+  updates:
+  - [github.com/igorshubovych/markdownlint-cli: v0.32.2 → v0.33.0](https://github.com/igorshubovych/markdownlint-cli/compare/v0.32.2...v0.33.0)
+  - [github.com/adrienverge/yamllint: v1.28.0 → v1.29.0](https://github.com/adrienverge/yamllint/compare/v1.28.0...v1.29.0)
+  - [github.com/tier4/pre-commit-hooks-ros: v0.7.1 → v0.8.0](https://github.com/tier4/pre-commit-hooks-ros/compare/v0.7.1...v0.8.0)
+  - [github.com/shellcheck-py/shellcheck-py: v0.8.0.4 → v0.9.0.2](https://github.com/shellcheck-py/shellcheck-py/compare/v0.8.0.4...v0.9.0.2)
+  - [github.com/scop/pre-commit-shfmt: v3.5.1-1 → v3.6.0-1](https://github.com/scop/pre-commit-shfmt/compare/v3.5.1-1...v3.6.0-1)
+  - [github.com/pycqa/isort: 5.10.1 → 5.12.0](https://github.com/pycqa/isort/compare/5.10.1...5.12.0)
+  - [github.com/psf/black: 22.10.0 → 23.1.0](https://github.com/psf/black/compare/22.10.0...23.1.0)
+  * style(pre-commit): autofix
+  ---------
+  Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
 * feat(prius_sensor_kit_launch): pass container to velodyne nodes (`#48 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/48>`_)
   * feat(prius_sensor_kit_launch): pass container to velodyne nodes
   * feat(prius_sensor_kit_launch): align true/false
-* feat(common_sensor_launch): change interpolate to distortion_corrector (`#41 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/41>`_)
-  * feat(common_sensor_launch): change interpolate to distortion_corrector
-  * Fix input topic
+* refactor(prius_sensor_kit_launch): add use_gnss_ins_orientation parameter (`#44 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/44>`_)
+  * refactor(prius_sensor_kit_launch): add use_gnss_ins_orientation parameter
+  * change launch param
+* fix(prius_sensor_kit_launch): fix arg name in gnss launch file (`#43 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/43>`_)
+* refactor(prius_sensor_kit_launch): update gnss launch file according to updated gnss poser package (`#42 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/42>`_)
+* feat(distortion_corrector): use gyroscope for correcting LiDAR distortion (`#36 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/36>`_)
+  * removed vehicle_velocity_converter from localization
+  * changed description of vehicle velocity converter in sensing.launch.xml
 * feat: load global parameter (`#31 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/31>`_)
 * ci(pre-commit): update pre-commit-hooks-ros (`#16 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/16>`_)
   * ci(pre-commit): update pre-commit-hooks-ros
@@ -101,7 +140,6 @@ Changelog for package common_sensor_launch
   * Update .pre-commit-config.yaml
   * Update .pre-commit-config.yaml
   Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
-* chore: clean up files (`#6 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/6>`_)
 * feat: add packages (`#3 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/3>`_)
   * release v0.4.0
   * Feature/phased timestamped velodyne (`#53 <https://github.com/autowarefoundation/prius_sensor_kit_launch/issues/53>`_)
@@ -471,4 +509,4 @@ Changelog for package common_sensor_launch
   Co-authored-by: Keisuke Shima <19993104+KeisukeShima@users.noreply.github.com>
   Co-authored-by: Satoshi OTA <44889564+satoshi-ota@users.noreply.github.com>
   Co-authored-by: Shinnosuke Hirakawa <8327162+0x126@users.noreply.github.com>
-* Contributors: Amadeusz Szymko, David Wong, Ismet Atabay, Kaan Çolak, Kenji Miyake, Kenzo Lobos Tsunekawa, Max Schmeller, Shunsuke Miura, Takeshi Miura, Yamato Ando, Yi-Hsiang Fang (Vivid), Yoshi Ri, Yukihiro Saito, kminoda
+* Contributors: Amadeusz Szymko, David Wong, Kaan Çolak, Kenji Miyake, Kento Yabuuchi, Kenzo Lobos Tsunekawa, SakodaShintaro, Shunsuke Miura, TaikiYamada4, Takagi, Isamu, Takeshi Miura, Yamato Ando, Yoshi Ri, asana17, kminoda, melike, pre-commit-ci[bot]
